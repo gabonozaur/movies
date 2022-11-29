@@ -18,7 +18,13 @@ const App = () => {
     <ChakraProvider>
       <ImageConfigurationsContext.Provider value={configurationsHookValues}>
         <FilterContext.Provider value={filterHookValues}>
-          <Flex>
+          <Flex
+            position={"fixed"}
+            top="0px"
+            right="0px"
+            bottom="0px"
+            left="0px"
+          >
             <Filter />
             <Flex></Flex>
           </Flex>

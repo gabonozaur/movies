@@ -3,6 +3,7 @@ export interface UseFilter {
   setInput: (value: string) => void;
   data: BaseMovieDTO[];
   fetching: boolean;
+  fetchStatus?: boolean;
 }
 
 export interface BaseMovieDTO {
@@ -11,4 +12,5 @@ export interface BaseMovieDTO {
   overview: string;
   id: number;
   backdrop_path: string;
+  release_date: string;
 }

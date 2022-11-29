@@ -6,30 +6,24 @@ const useFilter = (): UseFilter => {
   const [data, setData] = useState<BaseMovieDTO[]>([]);
   const [fetching, setFetching] = useState(false);
   const [input, setInput] = useState("");
+  const [fetchStatus, setFetchStatus] = useState(null);
 
   const fetchData = async () => {
     setFetching(true);
+    setFetchStatus(null);
     try {
       const res = await apiClient.get(
         `/search/movie?api_key=${apiKey}&query=${encodeURI(input)}`
       );
-      console.log("res is", res);
       setData(res.data.results);
+      setFetchStatus(true);
     } catch (e) {
+      setFetchStatus(false);
       //something for handling error
     }
     setFetching(false);
   };
-  const fetchConfiguration = async () => {
-    try {
-      const res = await apiClient.get(
-        `/configuration?api_key=${apiKey}&query=${encodeURI(input)}`
-      );
-      console.log("res is", res);
-    } catch (e) {
-      //something for handling error
-    }
-  };
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       if (input) {
@@ -37,15 +31,18 @@ const useFilter = (): UseFilter => {
       }
     }, 500);
 
+    if (!input) {
+      setData([]);
+    } else {
+      setFetching(true);
+    }
+
     return () => {
       clearTimeout(timeout);
     };
   }, [input]);
 
-  useEffect(() => {
-    fetchConfiguration();
-  }, []);
-  return { input, setInput, data, fetching };
+  return { input, setInput, data, fetching, fetchStatus };
 };
 
 export default useFilter;

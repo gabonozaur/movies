@@ -1,21 +1,28 @@
-import { Flex, Img, Link } from "@chakra-ui/react";
+import { Flex, Img, Link, Text } from "@chakra-ui/react";
 import React from "react";
 import { useContext } from "react";
-import { ImageConfigurationsContext } from "../../App";
-import { basePosterLink } from "../../utils/apiClient";
-import { BaseMovieDTO } from "../types";
+import { ImageConfigurationsContext } from "../App";
+import CustomImage from "../common/CustomImage";
+import { basePosterLink } from "../utils/apiClient";
+import { BaseMovieDTO } from "./types";
 
 const CardFilter: React.FC<BaseMovieDTO> = ({
   original_title,
   overview,
   poster_path,
-  backdrop_path,
+  release_date,
+  id,
 }) => {
-  const { configurations } = useContext(ImageConfigurationsContext);
-
   return (
-    <Link display={"flex"}>
-      <Img w="64px" src={`${basePosterLink}/w200${backdrop_path}`} />
+    <Link href={`/${id}`} display={"flex"} py="16px" alignContent="center">
+      <CustomImage src={poster_path} path="poster" />
+      <Flex flex={1} direction="column" p="8px">
+        <Text fontSize={"h3"} fontWeight={"bold"}>
+          {original_title}
+        </Text>
+        <Text>{`Release: ${release_date}`}</Text>
+        <Text noOfLines={2}>{overview}</Text>
+      </Flex>
     </Link>
   );
 };
