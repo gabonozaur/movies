@@ -12,6 +12,7 @@ const CustomImage: React.FC<CustomImageProps> = ({ src, path, ...props }) => {
 
   return (
     <Image
+      loading="lazy"
       src={
         path
           ? `${configurations?.base_url}${

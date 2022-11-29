@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { apiClient, apiKey } from "../utils/apiClient";
+import { apiClient, apiKey } from "../../utils/apiClient";
 import { BaseMovieDTO, UseFilter } from "./types";
 
 const useFilter = (): UseFilter => {

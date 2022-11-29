@@ -1,7 +1,7 @@
 import { CloseIcon } from "@chakra-ui/icons";
 import { Flex, IconButton, Input, Spinner, Text } from "@chakra-ui/react";
 import { useContext } from "react";
-import { FilterContext } from "../App";
+import { FilterContext } from "../../App";
 import CardFilter from "./Card";
 
 const Filter = () => {
