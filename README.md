@@ -8,7 +8,7 @@ Wanted to add the apiKey and basePath to a .env file, got used to it in Next but
 
 The id of selected movie is passed as query params and I decided to name the interface for data provided from BE with 'DTO' because it's easier to know what is FE param and what is received.
 
-Added some nice touch with debouncing in sidebar search...although it looks like overkill in specific movie page
+Added some nice touch with debouncing in sidebar search
 
 Used // eslint-disable-next-line react-hooks/exhaustive-deps to ignore unused dependencies in useEffect .
 

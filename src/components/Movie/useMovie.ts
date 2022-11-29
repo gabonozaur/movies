@@ -23,12 +23,8 @@ const useMovie = () => {
 
   useEffect(() => {
     setFetchingMovieData(true);
-    const timeout = setTimeout(() => {
-      fetchMovieData();
-    }, 500);
-    return () => {
-      clearTimeout(timeout);
-    };
+    fetchMovieData();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
