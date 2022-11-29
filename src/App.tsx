@@ -1,5 +1,5 @@
-import { ChakraProvider, Flex, Text } from "@chakra-ui/react";
-import React, { createContext } from "react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
+import { createContext } from "react";
 import Filter from "./components/Filter";
 import { UseFilter } from "./components/Filter/types";
 import useFilter from "./components/Filter/useFilter";

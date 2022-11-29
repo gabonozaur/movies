@@ -1,5 +1,4 @@
 import { Image, ImageProps } from "@chakra-ui/react";
-import { config } from "process";
 import React, { useContext } from "react";
 import { ImageConfigurationsContext } from "../App";
 

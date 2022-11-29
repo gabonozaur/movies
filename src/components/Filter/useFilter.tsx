@@ -40,6 +40,7 @@ const useFilter = (): UseFilter => {
     return () => {
       clearTimeout(timeout);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
   return { input, setInput, data, fetching, fetchStatus };

@@ -4,7 +4,6 @@ import axios from "axios";
 
 const baseUrl = "https://api.themoviedb.org/3";
 export const apiKey = "e92af75ede95254dd219c3566a588c48";
-export const basePosterLink = "https://image.tmdb.org/t/p";
 
 export const apiClient = axios.create({
   baseURL: baseUrl,
