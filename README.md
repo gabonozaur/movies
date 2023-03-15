@@ -15,3 +15,4 @@ Used // eslint-disable-next-line react-hooks/exhaustive-deps to ignore unused de
 Instead of hardcoding the values for pictures sizes, called in the first render the configurations request for pictures.
 
 Could add some image while the ones needed are loading
+# movies
